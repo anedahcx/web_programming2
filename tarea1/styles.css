@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
+
+body{
+    background: rgb(32,25,166);
+    background: linear-gradient(90deg, rgba(32,25,166,1) 0%, rgba(37,37,228,1) 41%, rgba(39,219,255,1) 100%);
+    
+}
+
+div{
+    font-family: "New Amsterdam", sans-serif;
+    font-style: normal;
+    font-size: 3em;
+
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    padding-left: 200px;
+    padding-right: 200px;
+
+}
+
+img{
+    display: block;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+}
