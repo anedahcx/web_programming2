@@ -58,7 +58,7 @@ function addTask() {
             nombre: nombre,
             completada: false
         };
-        tareas.push(tarea);
+        tasks.push(tarea);
         alert("Tarea agregada exitosamente");
 
     } else {
@@ -69,16 +69,30 @@ function addTask() {
 
 // FUNCION PARA MOSTRAR LAS TAREAS
 function showTasks(){
-    if(tareas.lenght === 0){
+    if(tasks.lenght === 0){
         alert("No hay tareas asignadas")
     } else {
         let mensaje = "Lista de tareas \n";
-        tareas.forEach((tarea, index) => {
-            mensaje += `${index+1}.-${tarea.nombre} [${tarea.completada ? "completada" : "pendiente"}]`;
-        })
+        tasks.forEach((tarea, index) => {
+            mensaje += `${index+1}.-${tarea.nombre} [${tarea.completada ? "completada" : "pendiente"}] \n`;
+        });
         alert(mensaje);  
         
     }
+}
+
+
+// FUNCION PARA MARCAR UNA TAREA COMO COMPLETADA
+function markTaskAsCompleted(){
+    let numero = parseInt(prompt("Introduce el numero de la tarea que deseas marcar como completada."));
+
+    if(numero > 0 && numero <= tasks.lenght){
+        tasks[numero - 1].completada = true;
+        alert(`La tarea "${tasks[numero - 1].nombre}" ha sido completada`);
+    }else{
+        alert("Numero invalido");
+    }
+
 }
 
 main();
