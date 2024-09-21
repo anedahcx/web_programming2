@@ -1,7 +1,8 @@
 // ARREGLO PARA ALMACENAR LOS OBJETOS
 let productos = [];
 
-function showMenu() {
+// FUNCION PARA VER LA LISTA DE PRODUCTOS
+function verLista() {
     return parseInt(prompt(`
         "Selecciona un producto para agregar al carrito..."
         1. Camisa [$300]
@@ -20,20 +21,20 @@ function main() {
     console.log(total);
     
     while (continuar) {
-        let opcion = showMenu();
+        let opcion = verLista();
         
         switch (opcion) {
             case 1:
-                agregarProducto("Camisa", 300, total);
+                agregarProducto("Camisa", 300);
                 break;
             case 2:
-                agregarProducto("Pantalón", 500, total);
+                agregarProducto("Pantalón", 500);
                 break;
             case 3:
-                agregarProducto("Zapatos", 800, total);
+                agregarProducto("Zapatos", 800);
                 break;
             case 4:
-                agregarProducto("Sombreros", 200, total);
+                agregarProducto("Sombrero", 200, );
                 break;
             case 9:
                 verCarrito(total);
@@ -55,7 +56,7 @@ function agregarProducto(nombre, precio) {
     }
 
     productos.push(producto);
-    //return parseInt(total += producto.precio);
+    console.log(`Un producto [${producto.nombre}] se ha agreado al carrito.`);
 }
 
 // FUNCION PARA VER EL CARRITO
@@ -67,13 +68,14 @@ function verCarrito(total){
     } else {
         //alert("Productos en el carrito:\n");
         
-        let lista = "Lista de productos \n"
+        let lista = "Lista de productos en el carrito\n"
 
+        // FOR EACH PARA RECORRER LA LISTA DE PRODUCTOS Y MOSTRAR CADA PRODUCTO CON SU PRECIO EN LA LISTA DE CARRITO
         productos.forEach(
             (producto, index) => { lista += `${index+1}.-${producto.nombre} - ${producto.precio} \n`;
         });
         
-
+        // FOR EACH PARA SUMAR EL PRECIO DE CADA PRODUCTO QUE SE ALMACENA EN LA LISTA DE CARRITO
         productos.forEach(
             producto => total += producto.precio
         );
@@ -83,4 +85,5 @@ function verCarrito(total){
 
 }
 
+// LLAMADA PARA EL COMIENZO DE LA APLICACION
 main();
