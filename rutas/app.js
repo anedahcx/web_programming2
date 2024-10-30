@@ -6,6 +6,8 @@ const routes = require('./routes');
 
 app.use('/', routes);
 
+app.use(express.static('routes'));
+
 app.listen(port, () => {
     console.log(`Escucha el servidor desde http://localhost:${port}`);
 });

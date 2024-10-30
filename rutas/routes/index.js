@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+app.use(express.static('routes'));
+
 router.get('/', (req, res) => {
     res.sendFile('index.html', { root: __dirname });
 });
